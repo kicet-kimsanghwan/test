@@ -136,6 +136,11 @@ def scrape_blog(page, request_context):
         imgs.append({"src": src, "label": b.get("label", "")})
     print(f"  [naver] 본문 이미지 {len(imgs)}장")
 
+    # [디버그] 각 이미지의 직전 텍스트(라벨)를 로그로 남겨 본문 구조를 파악한다.
+    for i, im in enumerate(imgs):
+        lbl = (im.get("label") or "").strip().replace("\n", " ")
+        print(f"  [naver][img {i}] label='{lbl[-120:]}'")
+
     if not imgs:
         raise RuntimeError("본문에서 이미지를 찾지 못함")
 

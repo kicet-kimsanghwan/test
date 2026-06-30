@@ -99,7 +99,7 @@ def scrape_channel(page, request_context, src):
     page.on("response", on_response)
     page.goto(url, wait_until="networkidle", timeout=45000)
     time.sleep(3)  # 지연 로딩 대기
-    page.off("response", on_response)
+    page.remove_listener("response", on_response)
 
     # 1순위: 가로챈 JSON에서 게시물 추출
     posts = []
