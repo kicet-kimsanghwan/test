@@ -129,6 +129,25 @@ def image_dims(data):
         return (0, 0)
 
 
+def image_stats(data):
+    """이미지의 (w, h, white_ratio) 반환.
+
+    white_ratio = 거의 흰색(밝은 배경) 픽셀 비율. 식단표(흰 배경+글자)는 높고,
+    음식 사진은 낮다 → 식단표 판별에 사용. 측정 실패 시 (0, 0, 0.0).
+    """
+    try:
+        from io import BytesIO
+        from PIL import Image
+        with Image.open(BytesIO(data)) as im:
+            w, h = im.size
+            small = im.convert("RGB").resize((64, 64))
+            px = list(small.getdata())
+            white = sum(1 for r, g, b in px if r > 225 and g > 225 and b > 225)
+            return w, h, white / float(len(px))
+    except Exception:
+        return (0, 0, 0.0)
+
+
 def write_bytes(dest_path, data):
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
     with open(dest_path, "wb") as f:
