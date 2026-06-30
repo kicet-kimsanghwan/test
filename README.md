@@ -23,14 +23,17 @@ public/         정적 대시보드 (GitHub Pages 루트)
   index.html / style.css / app.js
   data/menus.json          수집 결과(매니페스트)
   data/images/             다운로드된 메뉴 사진
-.github/workflows/deploy.yml   매일 수집 + Pages 배포
+.github/workflows/deploy.yml   소스별 스케줄 수집 + Pages 배포
 ```
 
 ## 설정 (최초 1회)
 
 1. **GitHub Pages 활성화**: 저장소 → Settings → Pages → *Source*를 **GitHub Actions**로 설정.
 2. **Actions 권한**: Settings → Actions → General → Workflow permissions를 *Read and write* 로.
-3. 워크플로우는 매일 KST 11:30에 자동 실행됩니다. Actions 탭에서 **Run workflow**로 수동 실행도 가능합니다.
+3. 자동 실행 스케줄(KST):
+   - **카카오(정담·슈마우스)** — 매일 **11:00**
+   - **네이버(동서대·다와푸드·벽산·영상산업센터)** — 매주 **월요일 10:30 / 11:10**, 그리고 그 주 게시물이 아직 없으면 **17:00** 보강. 새 주간 게시물이 있을 때만 갱신.
+   - Actions 탭에서 **Run workflow**로 전체 수동 실행도 가능합니다.
 
 ## 로컬 실행/테스트
 
