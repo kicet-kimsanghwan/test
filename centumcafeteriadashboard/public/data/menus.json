@@ -1,0 +1,12 @@
+{
+  "updatedAt": null,
+  "restaurants": [
+    { "id": "jeongdam", "name": "정담식당", "source": "kakao", "sourceUrl": "https://pf.kakao.com/_vKxgdn/posts", "type": "daily", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
+    { "id": "schmaus", "name": "슈마우스 센텀", "source": "kakao", "sourceUrl": "https://pf.kakao.com/_CiVis/posts", "type": "daily", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
+    { "id": "dongseo", "name": "동서대 구내식당", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
+    { "id": "dawa", "name": "다와푸드 에이스하이테크21", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
+    { "id": "byucksan", "name": "벽산e센텀클래스원 구내식당", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
+    { "id": "video", "name": "부산 영상산업센터 구내식당", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." }
+  ],
+  "errors": {}
+}

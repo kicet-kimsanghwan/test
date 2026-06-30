@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>센텀시티 구내식당 메뉴 대시보드</title>
+  <meta name="description" content="부산 센텀시티 구내식당 메뉴를 한 곳에서" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <h1>🍱 센텀시티 구내식당 메뉴</h1>
+      <p class="updated" id="updated">불러오는 중…</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2 class="section-title">오늘의 메뉴 <span class="badge">매일</span></h2>
+      <div class="grid" id="daily"></div>
+    </section>
+
+    <section>
+      <h2 class="section-title">이번 주 메뉴 <span class="badge">주간</span></h2>
+      <div class="grid" id="weekly"></div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>메뉴 사진은 각 식당의 카카오 채널·네이버 블로그에서 자동 수집됩니다. 사진을 클릭하면 크게 볼 수 있어요.</p>
+  </footer>
+
+  <!-- 이미지 확대 모달 -->
+  <div class="modal" id="modal" hidden>
+    <button class="modal-close" id="modalClose" aria-label="닫기">×</button>
+    <img id="modalImg" src="" alt="" />
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
