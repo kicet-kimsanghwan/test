@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T16:51:35.839474+09:00",
+  "updatedAt": "2026-06-30T17:01:16.583962+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -35,7 +35,7 @@
       "images": [
         "data/images/dongseo-2026-06-30-0-09a93b09.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.661091+09:00",
+      "scrapedAt": "2026-06-30T17:01:16.303741+09:00",
       "note": ""
     },
     {
@@ -48,7 +48,7 @@
       "images": [
         "data/images/dawa-2026-06-30-0-d97e05f5.png"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.699094+09:00",
+      "scrapedAt": "2026-06-30T17:01:16.357758+09:00",
       "note": ""
     },
     {
@@ -61,7 +61,7 @@
       "images": [
         "data/images/byucksan-2026-06-30-0-4df7e222.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.733842+09:00",
+      "scrapedAt": "2026-06-30T17:01:16.417986+09:00",
       "note": ""
     },
     {
@@ -74,13 +74,13 @@
       "images": [
         "data/images/video-2026-06-30-0-dbf73b53.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.793784+09:00",
+      "scrapedAt": "2026-06-30T17:01:16.539547+09:00",
       "note": ""
     }
   ],
   "errors": {
-    "jeongdam": null,
-    "schmaus": null,
+    "jeongdam": "name 'chosen_dt' is not defined",
+    "schmaus": "name 'chosen_dt' is not defined",
     "dongseo": null,
     "dawa": null,
     "byucksan": null,
