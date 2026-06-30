@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T15:49:25.556043+09:00",
+  "updatedAt": "2026-06-30T16:20:45.399424+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -14,7 +14,7 @@
         "data/images/jeongdam-2026-06-30-2-6915f582.jpg",
         "data/images/jeongdam-2026-06-30-3-504dcdd6.jpg"
       ],
-      "scrapedAt": "2026-06-30T15:48:45.941594+09:00"
+      "scrapedAt": "2026-06-30T16:20:05.817279+09:00"
     },
     {
       "id": "schmaus",
@@ -29,7 +29,7 @@
         "data/images/schmaus-2026-06-30-2-cd7a9433.jpg",
         "data/images/schmaus-2026-06-30-3-aace18dd.jpg"
       ],
-      "scrapedAt": "2026-06-30T15:48:55.684939+09:00"
+      "scrapedAt": "2026-06-30T16:20:15.286498+09:00"
     },
     {
       "id": "naver_weekly",
@@ -57,7 +57,7 @@
         "data/images/naver-2026-06-30-18-39244d5b.png",
         "data/images/naver-2026-06-30-19-aba1bc05.png"
       ],
-      "scrapedAt": "2026-06-30T15:49:25.507756+09:00",
+      "scrapedAt": "2026-06-30T16:20:45.356189+09:00",
       "note": ""
     }
   ],
