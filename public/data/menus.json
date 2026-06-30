@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T16:51:35.839474+09:00",
+  "updatedAt": "2026-06-30T17:07:45.058294+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -9,9 +9,9 @@
       "type": "daily",
       "date": "2026-06-30",
       "images": [
-        "data/images/jeongdam-2026-06-30-0-ef94a17e.jpg"
+        "data/images/jeongdam-2026-06-30-0-160cb620.png"
       ],
-      "scrapedAt": "2026-06-30T16:51:05.389110+09:00"
+      "scrapedAt": "2026-06-30T17:07:15.785507+09:00"
     },
     {
       "id": "schmaus",
@@ -21,9 +21,9 @@
       "type": "daily",
       "date": "2026-06-30",
       "images": [
-        "data/images/schmaus-2026-06-30-0-aace18dd.jpg"
+        "data/images/schmaus-2026-06-30-0-c03432ac.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:17.518847+09:00"
+      "scrapedAt": "2026-06-30T17:07:26.751178+09:00"
     },
     {
       "id": "dongseo",
@@ -35,7 +35,7 @@
       "images": [
         "data/images/dongseo-2026-06-30-0-09a93b09.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.661091+09:00",
+      "scrapedAt": "2026-06-30T17:07:43.942793+09:00",
       "note": ""
     },
     {
@@ -48,7 +48,7 @@
       "images": [
         "data/images/dawa-2026-06-30-0-d97e05f5.png"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.699094+09:00",
+      "scrapedAt": "2026-06-30T17:07:44.249657+09:00",
       "note": ""
     },
     {
@@ -61,7 +61,7 @@
       "images": [
         "data/images/byucksan-2026-06-30-0-4df7e222.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.733842+09:00",
+      "scrapedAt": "2026-06-30T17:07:44.565996+09:00",
       "note": ""
     },
     {
@@ -74,7 +74,7 @@
       "images": [
         "data/images/video-2026-06-30-0-dbf73b53.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:51:35.793784+09:00",
+      "scrapedAt": "2026-06-30T17:07:45.023016+09:00",
       "note": ""
     }
   ],

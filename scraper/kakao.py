@@ -178,28 +178,45 @@ def scrape_channel(page, request_context, src):
     for p in recent[:6]:
         print(f"  [kakao] 후보: 날짜={p.get('dt')} 이미지={len(p['images'])}장")
 
-    chosen = recent[0]
-    chosen_dt = chosen.get("dt")
-    candidates = chosen["images"][:config.KAKAO_CANDIDATES]
-    print(f"  [kakao] 선택 게시물 날짜={chosen_dt}, 후보 이미지 {len(candidates)}장")
+    # 정담식당은 같은 날 게시물이 2개(대표메뉴 사진첩 + 식단표)다. 한 게시물만 보면
+    # 식단표를 놓치므로, '가장 최근 날짜의 모든 게시물' 이미지를 후보로 모은다.
+    top_dt = recent[0].get("dt")
+    same_day = [p for p in recent
+                if p.get("dt") and top_dt and p["dt"].date() == top_dt.date()]
+    if not same_day:
+        same_day = recent[:1]
+    # 게시물별로 일정 수씩 모은다. 한 게시물(대표메뉴 앨범)이 후보를 다 차지해
+    # 식단표 게시물이 누락되는 것을 막기 위함.
+    candidates = []
+    for p in same_day:
+        cnt = 0
+        for u in p["images"]:
+            if u not in candidates:
+                candidates.append(u)
+                cnt += 1
+                if cnt >= config.KAKAO_PER_POST:
+                    break
+    candidates = candidates[:config.KAKAO_CANDIDATES]
+    print(f"  [kakao] {top_dt} 당일 게시물 {len(same_day)}개, 후보 이미지 {len(candidates)}장")
 
-    # 게시물에는 보통 '식단표(세로로 긴 표)'와 '대표메뉴 사진(가로/정사각)'이 섞여 있다.
-    # 후보들을 받아 측정한 뒤 '가장 세로로 긴(표에 가까운)' 1장만 식단표로 선택.
-    best = None  # (ratio=h/w, area, url, bytes, dims)
+    # 식단표(흰 배경+글자)와 대표메뉴 사진(음식 사진)을 '흰 배경 비율'로 구분한다.
+    # 흰 배경이 가장 많은 이미지를 식단표로 선택(세로형이면 가산점).
+    best = None  # (score, area, url, bytes, dims)
     for img_url in candidates:
         data = common.download_bytes(request_context, img_url, referer=url)
         if not data:
             continue
-        w, h = common.image_dims(data)
+        w, h, white = common.image_stats(data)
         if w == 0 or h == 0:
             continue
         if config.MIN_IMAGE_WIDTH and w < config.MIN_IMAGE_WIDTH:
             continue
         ratio = h / w
+        score = white + (0.15 if ratio >= 1.1 else 0.0)  # 식단표는 흰 배경+세로형
         area = w * h
-        print(f"  [kakao] 후보 {w}x{h} ratio={ratio:.2f}")
-        if best is None or ratio > best[0] or (abs(ratio - best[0]) < 0.05 and area > best[1]):
-            best = (ratio, area, img_url, data, (w, h))
+        print(f"  [kakao] 후보 {w}x{h} white={white:.2f} ratio={ratio:.2f} score={score:.2f}")
+        if best is None or score > best[0] or (abs(score - best[0]) < 0.02 and area > best[1]):
+            best = (score, area, img_url, data, (w, h))
 
     if best is None:
         raise RuntimeError("식단표 후보 이미지 측정/다운로드 실패")
@@ -216,7 +233,7 @@ def scrape_channel(page, request_context, src):
         "source": "kakao",
         "sourceUrl": url,
         "type": "daily",
-        "date": chosen_dt.strftime("%Y-%m-%d") if chosen_dt else common.today_kst_str(),
+        "date": top_dt.strftime("%Y-%m-%d") if top_dt else common.today_kst_str(),
         "images": saved,
         "scrapedAt": common.now_kst().isoformat(),
     }
