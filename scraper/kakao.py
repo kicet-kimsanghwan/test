@@ -185,11 +185,17 @@ def scrape_channel(page, request_context, src):
                 if p.get("dt") and top_dt and p["dt"].date() == top_dt.date()]
     if not same_day:
         same_day = recent[:1]
+    # 게시물별로 일정 수씩 모은다. 한 게시물(대표메뉴 앨범)이 후보를 다 차지해
+    # 식단표 게시물이 누락되는 것을 막기 위함.
     candidates = []
     for p in same_day:
+        cnt = 0
         for u in p["images"]:
             if u not in candidates:
                 candidates.append(u)
+                cnt += 1
+                if cnt >= config.KAKAO_PER_POST:
+                    break
     candidates = candidates[:config.KAKAO_CANDIDATES]
     print(f"  [kakao] {top_dt} 당일 게시물 {len(same_day)}개, 후보 이미지 {len(candidates)}장")
 
@@ -227,7 +233,7 @@ def scrape_channel(page, request_context, src):
         "source": "kakao",
         "sourceUrl": url,
         "type": "daily",
-        "date": chosen_dt.strftime("%Y-%m-%d") if chosen_dt else common.today_kst_str(),
+        "date": top_dt.strftime("%Y-%m-%d") if top_dt else common.today_kst_str(),
         "images": saved,
         "scrapedAt": common.now_kst().isoformat(),
     }
