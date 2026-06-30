@@ -50,9 +50,13 @@ def main():
                 print(f"  [FAIL] kakao {src['id']}: {e}")
                 traceback.print_exc()
 
-        # 2) 네이버 블로그(4개 식당)
+        # 2) 네이버 블로그(주간 메뉴 통합 1섹션)
         try:
             entries = naver.scrape_blog(page, req)
+            # 성공 시 옛 네이버 항목(식당별 분리 시절 id 등)을 모두 제거하고 새로 채운다.
+            manifest["restaurants"] = [
+                r for r in manifest.get("restaurants", []) if r.get("source") != "naver"
+            ]
             for entry in entries:
                 common.merge_restaurant(manifest, entry)
                 manifest["errors"][entry["id"]] = entry.get("note") or None
