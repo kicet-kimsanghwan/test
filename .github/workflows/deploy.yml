@@ -21,7 +21,9 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # ubuntu-24.04(noble)에선 playwright 1.44가 찾는 libasound2 패키지가
+    # libasound2t64로 바뀌어 --with-deps 설치가 실패함. 22.04로 고정.
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
