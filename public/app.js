@@ -35,7 +35,10 @@ function card(r) {
 
   const head = document.createElement("div");
   head.className = "card-head";
-  head.innerHTML = `<h3>${r.name}</h3><span class="card-date">${dateLabel(r)}</span>`;
+  const sub = r.subtitle ? `<div class="card-sub">${r.subtitle}</div>` : "";
+  head.innerHTML =
+    `<div><h3>${r.name}</h3>${sub}</div>` +
+    `<span class="card-date">${dateLabel(r)}</span>`;
   el.appendChild(head);
 
   if (r.images && r.images.length) {

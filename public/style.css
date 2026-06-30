@@ -60,6 +60,7 @@ body {
   display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
 }
 .card-head h3 { margin: 0; font-size: 1rem; }
+.card-sub { font-size: .74rem; color: var(--muted); margin-top: 2px; }
 .card-date { font-size: .78rem; color: var(--muted); white-space: nowrap; }
 
 .imgs { padding: 10px; display: flex; flex-direction: column; gap: 10px; }

@@ -136,47 +136,44 @@ def scrape_blog(page, request_context):
         imgs.append({"src": src, "label": b.get("label", "")})
     print(f"  [naver] 본문 이미지 {len(imgs)}장")
 
+    # [디버그] 각 이미지의 직전 텍스트(라벨)를 로그로 남겨 본문 구조를 파악한다.
+    for i, im in enumerate(imgs):
+        lbl = (im.get("label") or "").strip().replace("\n", " ")
+        print(f"  [naver][img {i}] label='{lbl[-120:]}'")
+
     if not imgs:
         raise RuntimeError("본문에서 이미지를 찾지 못함")
 
-    # 식당별로 분류. 키워드 매칭이 되는 순간 현재 식당이 바뀌고,
-    # 다음 식당 키워드가 나오기 전까지의 이미지는 현재 식당에 귀속.
-    grouped = {r["id"]: [] for r in config.NAVER_RESTAURANTS}
-    current = None
-    for im in imgs:
-        hit = _classify(im["label"])
-        if hit:
-            current = hit
-        if current:
-            grouped[current].append(im["src"])
+    # 이 블로그 게시글은 4개 식당 메뉴판이 '한 게시글에 사진으로 줄줄이' 올라오고,
+    # 사진별로 어느 식당인지 텍스트 표시가 없다(소개 문단에 4곳을 한꺼번에 나열).
+    # 따라서 텍스트만으로 식당별 자동 분리는 불가 → 메뉴판 전체를 한 섹션으로 모아 보여준다.
+    # (식당/요일별 정확한 분리는 사진 OCR이 필요하며, 추후 옵션으로 추가 가능.)
+    geo_words = ("NAVER Corp", "OpenStreetMap", "지도 데이터", "지도 컨트롤러")
+    saved = []
+    for i, im in enumerate(imgs):
+        # 본문 끝의 지도 캡처 등 메뉴와 무관한 이미지는 제외
+        if any(w in (im.get("label") or "") for w in geo_words):
+            continue
+        src = im["src"]
+        fn = common.image_filename("naver", i, src)
+        dest = f"{config.IMAGE_DIR}/{fn}"
+        if common.download_image(request_context, src, dest, referer=post_url):
+            saved.append(f"data/images/{fn}")
+    print(f"  [naver] 주간 메뉴판 {len(saved)}장 저장")
 
-    # 아무 식당도 못 잡았으면: 이미지 개수가 식당 수와 같다고 가정하고 순서대로 배정(폴백)
-    if all(len(v) == 0 for v in grouped.values()):
-        print("  [naver] 키워드 분류 실패 -> 순서대로 균등 배정(폴백)")
-        for i, r in enumerate(config.NAVER_RESTAURANTS):
-            if i < len(imgs):
-                grouped[r["id"]] = [imgs[i]["src"]]
+    if not saved:
+        raise RuntimeError("메뉴 이미지 다운로드 전부 실패")
 
-    week = common.today_kst_str()
-    results = []
-    for r in config.NAVER_RESTAURANTS:
-        srcs = grouped[r["id"]]
-        saved = []
-        for i, src in enumerate(srcs):
-            fn = common.image_filename(r["id"], i, src)
-            dest = f"{config.IMAGE_DIR}/{fn}"
-            if common.download_image(request_context, src, dest, referer=post_url):
-                saved.append(f"data/images/{fn}")
-        results.append({
-            "id": r["id"],
-            "name": r["name"],
-            "source": "naver",
-            "sourceUrl": post_url,
-            "type": "weekly",
-            "weekOf": week,
-            "images": saved,
-            "scrapedAt": common.now_kst().isoformat(),
-            "note": "" if saved else "이미지 분류/다운로드 실패 — 원문 링크 확인",
-        })
-        print(f"  [naver] {r['name']}: {len(saved)}장")
-    return results
+    rest_names = " · ".join(r["name"].replace(" 구내식당", "") for r in config.NAVER_RESTAURANTS)
+    return [{
+        "id": "naver_weekly",
+        "name": "센텀 구내식당 주간 메뉴",
+        "subtitle": rest_names,
+        "source": "naver",
+        "sourceUrl": post_url,
+        "type": "weekly",
+        "weekOf": common.today_kst_str(),
+        "images": saved,
+        "scrapedAt": common.now_kst().isoformat(),
+        "note": "",
+    }]
