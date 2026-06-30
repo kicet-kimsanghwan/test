@@ -1,12 +1,92 @@
 {
-  "updatedAt": null,
+  "updatedAt": "2026-06-30T15:15:14.036556+09:00",
   "restaurants": [
-    { "id": "jeongdam", "name": "정담식당", "source": "kakao", "sourceUrl": "https://pf.kakao.com/_vKxgdn/posts", "type": "daily", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
-    { "id": "schmaus", "name": "슈마우스 센텀", "source": "kakao", "sourceUrl": "https://pf.kakao.com/_CiVis/posts", "type": "daily", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
-    { "id": "dongseo", "name": "동서대 구내식당", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
-    { "id": "dawa", "name": "다와푸드 에이스하이테크21", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
-    { "id": "byucksan", "name": "벽산e센텀클래스원 구내식당", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." },
-    { "id": "video", "name": "부산 영상산업센터 구내식당", "source": "naver", "sourceUrl": "https://blog.naver.com/hongkongbus", "type": "weekly", "images": [], "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다." }
+    {
+      "id": "jeongdam",
+      "name": "정담식당",
+      "source": "kakao",
+      "sourceUrl": "https://pf.kakao.com/_vKxgdn/posts",
+      "type": "daily",
+      "images": [],
+      "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다."
+    },
+    {
+      "id": "schmaus",
+      "name": "슈마우스 센텀",
+      "source": "kakao",
+      "sourceUrl": "https://pf.kakao.com/_CiVis/posts",
+      "type": "daily",
+      "images": [],
+      "note": "아직 수집 전 — 첫 스크래핑 후 표시됩니다."
+    },
+    {
+      "id": "dongseo",
+      "name": "동서대 구내식당",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224323042005",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [
+        "data/images/dongseo-2026-06-30-5-2fb96888.png",
+        "data/images/dongseo-2026-06-30-6-29bfd9ec.png",
+        "data/images/dongseo-2026-06-30-7-178a515d.png",
+        "data/images/dongseo-2026-06-30-8-380a8ec3.png",
+        "data/images/dongseo-2026-06-30-9-4daa2300.png",
+        "data/images/dongseo-2026-06-30-10-f90e748c.png",
+        "data/images/dongseo-2026-06-30-11-3053c32e.png",
+        "data/images/dongseo-2026-06-30-12-8b817d03.png",
+        "data/images/dongseo-2026-06-30-13-ed7415f1.png",
+        "data/images/dongseo-2026-06-30-14-c8b8e129.png",
+        "data/images/dongseo-2026-06-30-15-82ccc2bc.png",
+        "data/images/dongseo-2026-06-30-16-16109569.png",
+        "data/images/dongseo-2026-06-30-17-d0df2ad1.png",
+        "data/images/dongseo-2026-06-30-18-aa68fb5b.png",
+        "data/images/dongseo-2026-06-30-19-39244d5b.png",
+        "data/images/dongseo-2026-06-30-20-aba1bc05.png"
+      ],
+      "scrapedAt": "2026-06-30T15:15:13.589842+09:00",
+      "note": ""
+    },
+    {
+      "id": "dawa",
+      "name": "다와푸드 에이스하이테크21",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224323042005",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [],
+      "scrapedAt": "2026-06-30T15:15:13.589869+09:00",
+      "note": "이미지 분류/다운로드 실패 — 원문 링크 확인"
+    },
+    {
+      "id": "byucksan",
+      "name": "벽산e센텀클래스원 구내식당",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224323042005",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [],
+      "scrapedAt": "2026-06-30T15:15:13.589875+09:00",
+      "note": "이미지 분류/다운로드 실패 — 원문 링크 확인"
+    },
+    {
+      "id": "video",
+      "name": "부산 영상산업센터 구내식당",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224323042005",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [],
+      "scrapedAt": "2026-06-30T15:15:13.999216+09:00",
+      "note": "이미지 분류/다운로드 실패 — 원문 링크 확인"
+    }
   ],
-  "errors": {}
+  "errors": {
+    "jeongdam": "'Page' object has no attribute 'off'",
+    "schmaus": "'Page' object has no attribute 'off'",
+    "dongseo": null,
+    "dawa": "이미지 분류/다운로드 실패 — 원문 링크 확인",
+    "byucksan": "이미지 분류/다운로드 실패 — 원문 링크 확인",
+    "video": "이미지 분류/다운로드 실패 — 원문 링크 확인"
+  }
 }
