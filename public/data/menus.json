@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-30T16:20:45.399424+09:00",
+  "updatedAt": "2026-06-30T16:43:30.419538+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -9,12 +9,9 @@
       "type": "daily",
       "date": "2026-06-30",
       "images": [
-        "data/images/jeongdam-2026-06-30-0-8755797c.jpg",
-        "data/images/jeongdam-2026-06-30-1-2787e8f5.jpg",
-        "data/images/jeongdam-2026-06-30-2-6915f582.jpg",
-        "data/images/jeongdam-2026-06-30-3-504dcdd6.jpg"
+        "data/images/jeongdam-2026-06-30-0-ef94a17e.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:20:05.817279+09:00"
+      "scrapedAt": "2026-06-30T16:43:00.229584+09:00"
     },
     {
       "id": "schmaus",
@@ -24,40 +21,60 @@
       "type": "daily",
       "date": "2026-06-30",
       "images": [
-        "data/images/schmaus-2026-06-30-0-c03432ac.jpg",
-        "data/images/schmaus-2026-06-30-1-e3a93f74.jpg",
-        "data/images/schmaus-2026-06-30-2-cd7a9433.jpg",
-        "data/images/schmaus-2026-06-30-3-aace18dd.jpg"
+        "data/images/schmaus-2026-06-30-0-aace18dd.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:20:15.286498+09:00"
+      "scrapedAt": "2026-06-30T16:43:12.385701+09:00"
     },
     {
-      "id": "naver_weekly",
-      "name": "센텀 구내식당 주간 메뉴",
-      "subtitle": "동서대 · 다와푸드 에이스하이테크21 · 벽산e센텀클래스원 · 부산 영상산업센터",
+      "id": "dongseo",
+      "name": "동서대 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224323042005",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
       "type": "weekly",
       "weekOf": "2026-06-30",
       "images": [
-        "data/images/naver-2026-06-30-4-2fb96888.png",
-        "data/images/naver-2026-06-30-5-29bfd9ec.png",
-        "data/images/naver-2026-06-30-6-178a515d.png",
-        "data/images/naver-2026-06-30-7-380a8ec3.png",
-        "data/images/naver-2026-06-30-8-4daa2300.png",
-        "data/images/naver-2026-06-30-9-f90e748c.png",
-        "data/images/naver-2026-06-30-10-3053c32e.png",
-        "data/images/naver-2026-06-30-11-8b817d03.png",
-        "data/images/naver-2026-06-30-12-ed7415f1.png",
-        "data/images/naver-2026-06-30-13-c8b8e129.png",
-        "data/images/naver-2026-06-30-14-82ccc2bc.png",
-        "data/images/naver-2026-06-30-15-16109569.png",
-        "data/images/naver-2026-06-30-16-d0df2ad1.png",
-        "data/images/naver-2026-06-30-17-aa68fb5b.png",
-        "data/images/naver-2026-06-30-18-39244d5b.png",
-        "data/images/naver-2026-06-30-19-aba1bc05.png"
+        "data/images/dongseo-2026-06-30-0-09a93b09.jpg"
       ],
-      "scrapedAt": "2026-06-30T16:20:45.356189+09:00",
+      "scrapedAt": "2026-06-30T16:43:30.191852+09:00",
+      "note": ""
+    },
+    {
+      "id": "dawa",
+      "name": "다와푸드 에이스하이테크21",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [
+        "data/images/dawa-2026-06-30-0-d97e05f5.png"
+      ],
+      "scrapedAt": "2026-06-30T16:43:30.252846+09:00",
+      "note": ""
+    },
+    {
+      "id": "byucksan",
+      "name": "벽산e센텀클래스원 구내식당",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [
+        "data/images/byucksan-2026-06-30-0-4df7e222.jpg"
+      ],
+      "scrapedAt": "2026-06-30T16:43:30.313546+09:00",
+      "note": ""
+    },
+    {
+      "id": "video",
+      "name": "부산 영상산업센터 구내식당",
+      "source": "naver",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "type": "weekly",
+      "weekOf": "2026-06-30",
+      "images": [
+        "data/images/video-2026-06-30-0-dbf73b53.jpg"
+      ],
+      "scrapedAt": "2026-06-30T16:43:30.373082+09:00",
       "note": ""
     }
   ],
@@ -65,9 +82,9 @@
     "jeongdam": null,
     "schmaus": null,
     "dongseo": null,
-    "dawa": "이미지 분류/다운로드 실패 — 원문 링크 확인",
-    "byucksan": "이미지 분류/다운로드 실패 — 원문 링크 확인",
-    "video": "이미지 분류/다운로드 실패 — 원문 링크 확인",
+    "dawa": null,
+    "byucksan": null,
+    "video": null,
     "naver_weekly": null
   }
 }

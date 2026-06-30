@@ -99,3 +99,37 @@ def ext_from_url(url, default=".jpg"):
 def image_filename(rid, index, url):
     h = hashlib.md5(url.encode("utf-8")).hexdigest()[:8]
     return f"{rid}-{today_kst_str()}-{index}-{h}{ext_from_url(url)}"
+
+
+def download_bytes(request_context, url, referer=None):
+    """이미지를 바이트로 받아온다(측정/선별용). 실패 시 None."""
+    headers = {"referer": referer} if referer else {}
+    try:
+        resp = request_context.get(url, headers=headers, timeout=30000)
+        if not resp.ok:
+            print(f"    [bytes] HTTP {resp.status} {url}")
+            return None
+        b = resp.body()
+        if not b or len(b) < 1024:
+            return None
+        return b
+    except Exception as e:
+        print(f"    [bytes] error {e} {url}")
+        return None
+
+
+def image_dims(data):
+    """바이트 이미지의 (w, h). 측정 실패 시 (0, 0)."""
+    try:
+        from io import BytesIO
+        from PIL import Image
+        with Image.open(BytesIO(data)) as im:
+            return im.size  # (w, h)
+    except Exception:
+        return (0, 0)
+
+
+def write_bytes(dest_path, data):
+    os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+    with open(dest_path, "wb") as f:
+        f.write(data)

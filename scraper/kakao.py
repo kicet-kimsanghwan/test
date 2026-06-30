@@ -180,20 +180,35 @@ def scrape_channel(page, request_context, src):
 
     chosen = recent[0]
     chosen_dt = chosen.get("dt")
-    # 메뉴 게시물은 보통 사진 1~몇 장. 과다 수집 방지로 상한 적용.
-    chosen_images = chosen["images"][:config.KAKAO_MAX_IMAGES]
-    print(f"  [kakao] 선택 게시물 날짜={chosen_dt}, 이미지 {len(chosen['images'])}장 "
-          f"-> {len(chosen_images)}장 사용")
+    candidates = chosen["images"][:config.KAKAO_CANDIDATES]
+    print(f"  [kakao] 선택 게시물 날짜={chosen_dt}, 후보 이미지 {len(candidates)}장")
 
-    # 이미지 다운로드
-    saved = []
-    for i, img_url in enumerate(chosen_images):
-        fn = common.image_filename(rid, i, img_url)
-        dest = f"{config.IMAGE_DIR}/{fn}"
-        if common.download_image(request_context, img_url, dest, referer=url):
-            saved.append(f"data/images/{fn}")
-    if not saved:
-        raise RuntimeError("이미지 다운로드 전부 실패")
+    # 게시물에는 보통 '식단표(세로로 긴 표)'와 '대표메뉴 사진(가로/정사각)'이 섞여 있다.
+    # 후보들을 받아 측정한 뒤 '가장 세로로 긴(표에 가까운)' 1장만 식단표로 선택.
+    best = None  # (ratio=h/w, area, url, bytes, dims)
+    for img_url in candidates:
+        data = common.download_bytes(request_context, img_url, referer=url)
+        if not data:
+            continue
+        w, h = common.image_dims(data)
+        if w == 0 or h == 0:
+            continue
+        if config.MIN_IMAGE_WIDTH and w < config.MIN_IMAGE_WIDTH:
+            continue
+        ratio = h / w
+        area = w * h
+        print(f"  [kakao] 후보 {w}x{h} ratio={ratio:.2f}")
+        if best is None or ratio > best[0] or (abs(ratio - best[0]) < 0.05 and area > best[1]):
+            best = (ratio, area, img_url, data, (w, h))
+
+    if best is None:
+        raise RuntimeError("식단표 후보 이미지 측정/다운로드 실패")
+
+    _, _, best_url, best_data, (bw, bh) = best
+    fn = common.image_filename(rid, 0, best_url)
+    common.write_bytes(f"{config.IMAGE_DIR}/{fn}", best_data)
+    print(f"  [kakao] 식단표 선택: {bw}x{bh} -> {fn}")
+    saved = [f"data/images/{fn}"]
 
     return {
         "id": rid,
