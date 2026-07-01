@@ -112,13 +112,21 @@ def _is_menu_image(src):
     return any(h in low for h in MENU_HOST_HINTS)
 
 
-def scrape_blog(page, request_context):
-    """네이버 블로그를 스크래핑해 식당별(4개) 항목 리스트 반환."""
+def scrape_blog(page, request_context, stored_logno=None):
+    """네이버 블로그를 스크래핑해 식당별(4개) 항목 리스트 반환.
+
+    stored_logno가 주어지고 최신 글이 그것과 같으면(=이번주 새 게시물 없음)
+    None을 반환해 기존 데이터를 그대로 유지하게 한다.
+    """
     print("  [naver] 시작")
-    category_no = _find_category_no(page)
+    category_no = config.NAVER_CATEGORY_NO or _find_category_no(page)
     log_no = _latest_logno(page, category_no)
     if not log_no:
         raise RuntimeError("최신 게시글 logNo를 찾지 못함")
+
+    if stored_logno and str(log_no) == str(stored_logno):
+        print(f"  [naver] 최신 글(logNo={log_no})이 기존과 동일 — 새 게시물 없음")
+        return None
 
     post_url = f"https://m.blog.naver.com/{config.NAVER_BLOG_ID}/{log_no}"
     print(f"  [naver] 게시글 -> {post_url}")

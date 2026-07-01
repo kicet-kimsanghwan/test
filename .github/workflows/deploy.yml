@@ -2,9 +2,14 @@ name: 메뉴 수집 & 대시보드 배포
 
 on:
   schedule:
-    # 매일 KST 11:30 (= UTC 02:30) 카카오/네이버 업로드 직후 수집
-    - cron: "30 2 * * *"
-  workflow_dispatch: {}        # 수동 실행 버튼
+    # 카카오(정담·슈마우스): 매일 11:00 KST (= 02:00 UTC)
+    - cron: "0 2 * * *"
+    # 네이버(4개 식당): 매주 월요일 10:30 / 11:10 / 17:00 KST
+    #   = 월 01:30 / 02:10 / 08:00 UTC. 새 주간 게시물이 있을 때만 갱신.
+    - cron: "30 1 * * 1"
+    - cron: "10 2 * * 1"
+    - cron: "0 8 * * 1"
+  workflow_dispatch: {}        # 수동 실행 버튼(전체 수집)
   push:
     branches: [main]           # 코드/대시보드 변경 시 재배포
     paths-ignore:
@@ -36,8 +41,17 @@ jobs:
           pip install -r scraper/requirements.txt
           python -m playwright install --with-deps chromium
 
-      - name: 메뉴 스크래핑
-        run: python scraper/scrape.py
+      - name: 수집 대상 결정
+        id: target
+        run: |
+          case "${{ github.event.schedule }}" in
+            "0 2 * * *")                          echo "value=kakao" >> "$GITHUB_OUTPUT" ;;
+            "30 1 * * 1"|"10 2 * * 1"|"0 8 * * 1") echo "value=naver" >> "$GITHUB_OUTPUT" ;;
+            *)                                    echo "value=all"   >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - name: 메뉴 스크래핑 (${{ steps.target.outputs.value }})
+        run: python scraper/scrape.py ${{ steps.target.outputs.value }}
         # 일부 소스 실패해도 배포는 진행 (이전 데이터 유지)
         continue-on-error: true
 
