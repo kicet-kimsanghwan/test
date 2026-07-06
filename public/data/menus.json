@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-05T15:08:44.670609+09:00",
+  "updatedAt": "2026-07-06T12:29:27.979858+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -7,11 +7,11 @@
       "source": "kakao",
       "sourceUrl": "https://pf.kakao.com/_vKxgdn/posts",
       "type": "daily",
-      "date": "2026-07-03",
+      "date": "2026-07-06",
       "images": [
-        "data/images/jeongdam-2026-07-05-0-948f70ce.jpg"
+        "data/images/jeongdam-2026-07-06-0-ce6d056b.png"
       ],
-      "scrapedAt": "2026-07-05T15:08:23.900442+09:00"
+      "scrapedAt": "2026-07-06T12:28:41.486659+09:00"
     },
     {
       "id": "schmaus",
@@ -19,62 +19,62 @@
       "source": "kakao",
       "sourceUrl": "https://pf.kakao.com/_CiVis/posts",
       "type": "daily",
-      "date": "2026-07-03",
+      "date": "2026-07-06",
       "images": [
-        "data/images/schmaus-2026-07-05-0-536881ca.jpg"
+        "data/images/schmaus-2026-07-06-0-d8a47e96.jpg"
       ],
-      "scrapedAt": "2026-07-05T15:08:44.622785+09:00"
+      "scrapedAt": "2026-07-06T12:29:11.519172+09:00"
     },
     {
       "id": "dongseo",
       "name": "동서대 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224337572153",
       "type": "weekly",
-      "weekOf": "2026-06-30",
+      "weekOf": "2026-07-06",
       "images": [
-        "data/images/dongseo-2026-06-30-0-09a93b09.jpg"
+        "data/images/dongseo-2026-07-06-0-a4ceaf77.jpg"
       ],
-      "scrapedAt": "2026-06-30T17:12:48.669247+09:00",
+      "scrapedAt": "2026-07-06T12:29:27.320642+09:00",
       "note": ""
     },
     {
       "id": "dawa",
       "name": "다와푸드 에이스하이테크21",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224337572153",
       "type": "weekly",
-      "weekOf": "2026-06-30",
+      "weekOf": "2026-07-06",
       "images": [
-        "data/images/dawa-2026-06-30-0-d97e05f5.png"
+        "data/images/dawa-2026-07-06-0-8ef49366.png"
       ],
-      "scrapedAt": "2026-06-30T17:12:48.693237+09:00",
+      "scrapedAt": "2026-07-06T12:29:27.451219+09:00",
       "note": ""
     },
     {
       "id": "byucksan",
       "name": "벽산e센텀클래스원 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224337572153",
       "type": "weekly",
-      "weekOf": "2026-06-30",
+      "weekOf": "2026-07-06",
       "images": [
-        "data/images/byucksan-2026-06-30-0-4df7e222.jpg"
+        "data/images/byucksan-2026-07-06-0-519d3ef8.jpg"
       ],
-      "scrapedAt": "2026-06-30T17:12:48.715557+09:00",
+      "scrapedAt": "2026-07-06T12:29:27.505890+09:00",
       "note": ""
     },
     {
       "id": "video",
       "name": "부산 영상산업센터 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224330133344",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224337572153",
       "type": "weekly",
-      "weekOf": "2026-06-30",
+      "weekOf": "2026-07-06",
       "images": [
-        "data/images/video-2026-06-30-0-dbf73b53.jpg"
+        "data/images/video-2026-07-06-0-9cc9b6b5.jpg"
       ],
-      "scrapedAt": "2026-06-30T17:12:48.925306+09:00",
+      "scrapedAt": "2026-07-06T12:29:27.945432+09:00",
       "note": ""
     }
   ],
