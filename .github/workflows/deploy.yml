@@ -2,14 +2,10 @@ name: 메뉴 수집 & 대시보드 배포
 
 on:
   schedule:
-    # 카카오(정담·슈마우스): 매일 10:45 KST (= 01:45 UTC)
-    # GitHub Actions는 정각(00분)에 예약이 몰려 지연되기 쉬우므로 5분 뒤로 오프셋
-    - cron: "5 2 * * *"
-    # 네이버(4개 식당): 매주 월요일 10:30 / 11:00 / 17:00 KST
-    #   = 월 01:30 / 02:00 / 08:00 UTC. 새 주간 게시물이 있을 때만 갱신.
-    - cron: "35 1 * * 1"
-    - cron: "15 2 * * 1"
-    - cron: "5 8 * * 1"
+    # 카카오(정담·슈마우스): 매일 10:35 KST (= 01:35 UTC)
+    - cron: "35 1 * * *"
+    # 네이버(4개 식당): 매주 월요일 10:05 KST (= 01:05 UTC)
+    - cron: "5 1 * * 1"
   workflow_dispatch: {}        # 수동 실행 버튼(전체 수집)
   push:
     branches: [main]           # 코드/대시보드 변경 시 재배포
@@ -46,9 +42,9 @@ jobs:
         id: target
         run: |
           case "${{ github.event.schedule }}" in
-            "5 2 * * *")                            echo "value=kakao" >> "$GITHUB_OUTPUT" ;;
-            "35 1 * * 1"|"15 2 * * 1"|"5 8 * * 1")   echo "value=naver" >> "$GITHUB_OUTPUT" ;;
-            *)                                      echo "value=all"   >> "$GITHUB_OUTPUT" ;;
+            "35 1 * * *") echo "value=kakao" >> "$GITHUB_OUTPUT" ;;
+            "5 1 * * 1")  echo "value=naver" >> "$GITHUB_OUTPUT" ;;
+            *)            echo "value=all"   >> "$GITHUB_OUTPUT" ;;
           esac
 
       - name: 메뉴 스크래핑 (${{ steps.target.outputs.value }})
