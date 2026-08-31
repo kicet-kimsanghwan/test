@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T14:26:11.436455+09:00",
+  "updatedAt": "2026-08-31T10:21:22.589892+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -29,50 +29,50 @@
       "id": "dongseo",
       "name": "동서대 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224388063049",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224395597875",
       "type": "weekly",
-      "weekOf": "2026-08-24",
+      "weekOf": "2026-08-31",
       "images": [
-        "data/images/dongseo-2026-08-24-0-12ddb37b.jpg"
+        "data/images/dongseo-2026-08-31-0-bacf02ff.jpg"
       ],
-      "scrapedAt": "2026-08-24T08:31:05.472268+09:00",
+      "scrapedAt": "2026-08-31T10:21:22.391152+09:00",
       "note": ""
     },
     {
       "id": "dawa",
       "name": "다와푸드 에이스하이테크21",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224388063049",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224395597875",
       "type": "weekly",
-      "weekOf": "2026-08-24",
+      "weekOf": "2026-08-31",
       "images": [
-        "data/images/dawa-2026-08-24-0-eff2c083.png"
+        "data/images/dawa-2026-08-31-0-6346aaa1.png"
       ],
-      "scrapedAt": "2026-08-24T08:31:05.494183+09:00",
+      "scrapedAt": "2026-08-31T10:21:22.514243+09:00",
       "note": ""
     },
     {
       "id": "byucksan",
       "name": "벽산e센텀클래스원 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224388063049",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224395597875",
       "type": "weekly",
-      "weekOf": "2026-08-24",
+      "weekOf": "2026-08-31",
       "images": [
-        "data/images/byucksan-2026-08-24-0-5d7037f8.jpg"
+        "data/images/byucksan-2026-08-31-0-352f81b2.jpg"
       ],
-      "scrapedAt": "2026-08-24T08:31:05.519613+09:00",
+      "scrapedAt": "2026-08-31T10:21:22.543694+09:00",
       "note": ""
     },
     {
       "id": "video",
       "name": "부산 영상산업센터 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224388063049",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224395597875",
       "type": "weekly",
-      "weekOf": "2026-08-24",
+      "weekOf": "2026-08-31",
       "images": [],
-      "scrapedAt": "2026-08-24T08:31:05.519635+09:00",
+      "scrapedAt": "2026-08-31T10:21:22.543712+09:00",
       "note": "식단표 사진을 찾지 못함 — 원문 링크 확인"
     }
   ],
