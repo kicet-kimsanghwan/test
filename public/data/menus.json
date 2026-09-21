@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T10:16:16.107682+09:00",
+  "updatedAt": "2026-09-21T10:34:13.718877+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -9,9 +9,9 @@
       "type": "daily",
       "date": "2026-09-18",
       "images": [
-        "data/images/jeongdam-2026-09-20-0-f01151ec.png"
+        "data/images/jeongdam-2026-09-21-0-f01151ec.png"
       ],
-      "scrapedAt": "2026-09-20T13:55:02.672713+09:00"
+      "scrapedAt": "2026-09-21T10:34:03.839355+09:00"
     },
     {
       "id": "schmaus",
@@ -19,11 +19,11 @@
       "source": "kakao",
       "sourceUrl": "https://pf.kakao.com/_CiVis/posts",
       "type": "daily",
-      "date": "2026-09-18",
+      "date": "2026-09-21",
       "images": [
-        "data/images/schmaus-2026-09-20-0-098d7858.jpg"
+        "data/images/schmaus-2026-09-21-0-1526c3e9.jpg"
       ],
-      "scrapedAt": "2026-09-20T13:55:32.656234+09:00"
+      "scrapedAt": "2026-09-21T10:34:13.671886+09:00"
     },
     {
       "id": "dongseo",
