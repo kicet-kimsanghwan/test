@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-27T14:19:43.816387+09:00",
+  "updatedAt": "2026-09-28T10:34:11.983274+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -29,52 +29,52 @@
       "id": "dongseo",
       "name": "동서대 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224418271120",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224424374227",
       "type": "weekly",
-      "weekOf": "2026-09-21",
+      "weekOf": "2026-09-28",
       "images": [
-        "data/images/dongseo-2026-09-21-0-52c6f38b.jpg"
+        "data/images/dongseo-2026-09-28-0-a74c74c1.jpg"
       ],
-      "scrapedAt": "2026-09-21T10:01:23.865002+09:00",
+      "scrapedAt": "2026-09-28T10:34:11.204888+09:00",
       "note": ""
     },
     {
       "id": "dawa",
       "name": "다와푸드 에이스하이테크21",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224418271120",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224424374227",
       "type": "weekly",
-      "weekOf": "2026-09-21",
+      "weekOf": "2026-09-28",
       "images": [
-        "data/images/dawa-2026-09-21-0-5e101524.png"
+        "data/images/dawa-2026-09-28-0-18cd6a4c.png"
       ],
-      "scrapedAt": "2026-09-21T10:01:23.961572+09:00",
+      "scrapedAt": "2026-09-28T10:34:11.388908+09:00",
       "note": ""
     },
     {
       "id": "byucksan",
       "name": "벽산e센텀클래스원 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224418271120",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224424374227",
       "type": "weekly",
-      "weekOf": "2026-09-21",
+      "weekOf": "2026-09-28",
       "images": [
-        "data/images/byucksan-2026-09-21-0-a9c04750.jpg"
+        "data/images/byucksan-2026-09-28-0-f0f458a2.jpg"
       ],
-      "scrapedAt": "2026-09-21T10:01:24.055622+09:00",
+      "scrapedAt": "2026-09-28T10:34:11.565419+09:00",
       "note": ""
     },
     {
       "id": "video",
       "name": "부산 영상산업센터 구내식당",
       "source": "naver",
-      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224418271120",
+      "sourceUrl": "https://m.blog.naver.com/hongkongbus/224424374227",
       "type": "weekly",
-      "weekOf": "2026-09-21",
+      "weekOf": "2026-09-28",
       "images": [
-        "data/images/video-2026-09-21-0-d0552c61.jpg"
+        "data/images/video-2026-09-28-0-89c6a5a5.jpg"
       ],
-      "scrapedAt": "2026-09-21T10:01:24.152826+09:00",
+      "scrapedAt": "2026-09-28T10:34:11.951097+09:00",
       "note": ""
     }
   ],
