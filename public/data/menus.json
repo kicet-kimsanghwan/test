@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T15:01:34.437487+09:00",
+  "updatedAt": "2026-10-08T11:52:54.538144+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -79,8 +79,8 @@
     }
   ],
   "errors": {
-    "jeongdam": null,
-    "schmaus": null,
+    "jeongdam": "게시물/이미지를 찾지 못함",
+    "schmaus": "게시물/이미지를 찾지 못함",
     "dongseo": null,
     "dawa": null,
     "byucksan": null,
