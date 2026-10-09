@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T12:10:03.591687+09:00",
+  "updatedAt": "2026-10-09T15:00:49.300585+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -11,7 +11,7 @@
       "images": [
         "data/images/jeongdam-2026-10-09-0-b6c60bc0.png"
       ],
-      "scrapedAt": "2026-10-09T12:09:40.562141+09:00"
+      "scrapedAt": "2026-10-09T15:00:19.442359+09:00"
     },
     {
       "id": "schmaus",
@@ -23,7 +23,7 @@
       "images": [
         "data/images/schmaus-2026-10-09-0-948a0078.jpg"
       ],
-      "scrapedAt": "2026-10-09T12:10:03.566830+09:00"
+      "scrapedAt": "2026-10-09T15:00:49.256159+09:00"
     },
     {
       "id": "dongseo",
