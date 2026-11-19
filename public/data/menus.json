@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T13:28:11.583650+09:00",
+  "updatedAt": "2026-11-19T13:36:57.831276+09:00",
   "restaurants": [
     {
       "id": "jeongdam",
@@ -77,8 +77,8 @@
     }
   ],
   "errors": {
-    "jeongdam": null,
-    "schmaus": null,
+    "jeongdam": "Page.goto: Timeout 45000ms exceeded.\nCall log:\nnavigating to \"https://pf.kakao.com/_vKxgdn/posts\", waiting until \"networkidle\"\n",
+    "schmaus": "Page.goto: Timeout 45000ms exceeded.\nCall log:\nnavigating to \"https://pf.kakao.com/_CiVis/posts\", waiting until \"networkidle\"\n",
     "dongseo": null,
     "dawa": null,
     "byucksan": "식단표 사진을 찾지 못함 — 원문 링크 확인",
